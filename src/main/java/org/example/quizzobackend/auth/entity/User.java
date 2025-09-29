@@ -1,6 +1,10 @@
-package org.example.quizzobackend.domain;
+package org.example.quizzobackend.auth.entity;
 
 import lombok.*;
+import org.example.quizzobackend.domain.BaseEntity;
+import org.example.quizzobackend.domain.Quiz;
+import org.example.quizzobackend.domain.QuizAttempt;
+import org.example.quizzobackend.domain.Role;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;

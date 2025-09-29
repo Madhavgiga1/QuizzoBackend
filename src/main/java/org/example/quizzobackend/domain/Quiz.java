@@ -3,6 +3,7 @@ package org.example.quizzobackend.domain;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.example.quizzobackend.auth.entity.User;
 
 import java.util.*;
 
