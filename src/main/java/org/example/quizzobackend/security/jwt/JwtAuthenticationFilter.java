@@ -1,4 +1,4 @@
-package org.example.quizzobackend.security;
+package org.example.quizzobackend.security.jwt;
 
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;

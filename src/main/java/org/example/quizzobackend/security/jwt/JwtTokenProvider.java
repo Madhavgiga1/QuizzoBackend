@@ -1,4 +1,4 @@
-package org.example.quizzobackend.security;
+package org.example.quizzobackend.security.jwt;
 
 import io.jsonwebtoken.*;
 import io.jsonwebtoken.security.Keys;

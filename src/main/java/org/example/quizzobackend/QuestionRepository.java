@@ -1,3 +1,5 @@
+package org.example.quizzobackend;
+
 import org.example.quizzobackend.domain.DifficultyLevel;
 import org.example.quizzobackend.domain.Question;
 import org.example.quizzobackend.domain.QuestionType;

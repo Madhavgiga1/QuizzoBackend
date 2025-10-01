@@ -6,7 +6,7 @@ import org.apache.coyote.BadRequestException;
 import org.example.quizzobackend.auth.entity.User;
 import org.example.quizzobackend.auth.repository.UserRepository;
 import org.example.quizzobackend.domain.Role;
-import org.example.quizzobackend.security.JwtTokenProvider;
+import org.example.quizzobackend.security.jwt.JwtTokenProvider;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
