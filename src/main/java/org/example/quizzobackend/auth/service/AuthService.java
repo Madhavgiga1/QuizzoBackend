@@ -5,7 +5,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.apache.coyote.BadRequestException;
 import org.example.quizzobackend.auth.entity.User;
 import org.example.quizzobackend.auth.repository.UserRepository;
-import org.example.quizzobackend.domain.Role;
+import org.example.quizzobackend.auth.entity.Role;
 import org.example.quizzobackend.security.jwt.JwtTokenProvider;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
