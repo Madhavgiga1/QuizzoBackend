@@ -2,6 +2,7 @@ package org.example.quizzobackend.admin.controller;
 
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import org.apache.coyote.BadRequestException;
 import org.example.quizzobackend.admin.service.QuestionManagementService;
 import org.example.quizzobackend.admin.service.QuizManagementService;
 import org.example.quizzobackend.admin.dto.QuestionCreateDto;
@@ -79,7 +80,7 @@ public class AdminQuizController {
 
     // Question Management
     @PostMapping("/questions")
-    public ResponseEntity<Question> createQuestion(@Valid @RequestBody QuestionCreateDto dto) {
+    public ResponseEntity<Question> createQuestion(@Valid @RequestBody QuestionCreateDto dto) throws BadRequestException {
         Question question = questionManagementService.createQuestion(dto);
         return new ResponseEntity<>(question, HttpStatus.CREATED);
     }
@@ -87,13 +88,13 @@ public class AdminQuizController {
     @PutMapping("/questions/{id}")
     public ResponseEntity<Question> updateQuestion(
             @PathVariable UUID id,
-            @Valid @RequestBody QuestionCreateDto dto) {
+            @Valid @RequestBody QuestionCreateDto dto) throws BadRequestException {
         Question question = questionManagementService.updateQuestion(id, dto);
         return ResponseEntity.ok(question);
     }
 
     @DeleteMapping("/questions/{id}")
-    public ResponseEntity<Void> deleteQuestion(@PathVariable UUID id) {
+    public ResponseEntity<Void> deleteQuestion(@PathVariable UUID id) throws BadRequestException {
         questionManagementService.deleteQuestion(id);
         return ResponseEntity.noContent().build();
     }

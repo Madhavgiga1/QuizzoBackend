@@ -1,11 +1,17 @@
 package org.example.quizzobackend.auth.service;
 
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.coyote.BadRequestException;
+import org.example.quizzobackend.auth.dto.JwtAuthResponse;
+import org.example.quizzobackend.auth.dto.LoginRequest;
+import org.example.quizzobackend.auth.dto.RegisterRequest;
+import org.example.quizzobackend.auth.dto.UserDto;
 import org.example.quizzobackend.auth.entity.User;
 import org.example.quizzobackend.auth.repository.UserRepository;
 import org.example.quizzobackend.auth.entity.Role;
+import org.example.quizzobackend.common.exception.ResourceNotFoundException;
 import org.example.quizzobackend.security.jwt.JwtTokenProvider;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -26,7 +32,7 @@ public class AuthService {
     private final JwtTokenProvider jwtTokenProvider;
 
     @Transactional
-    public UserDto registerUser(RegisterRequest request) {
+    public UserDto registerUser(RegisterRequest request) throws BadRequestException {
         // Validate
         if (userRepository.existsByUsername(request.getUsername())) {
             throw new BadRequestException("Username is already taken!");
@@ -69,7 +75,7 @@ public class AuthService {
         return mapToDto(user);
     }
 
-    public JwtAuthResponse login(LoginRequest request) {
+    public JwtAuthResponse login(@Valid LoginRequest request) {
         Authentication authentication = authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(
                         request.getUsernameOrEmail(),

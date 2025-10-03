@@ -1,7 +1,6 @@
 package org.example.quizzobackend.security.jwt;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.quiz.common.exception.ErrorResponse;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;

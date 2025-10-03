@@ -2,6 +2,10 @@ package org.example.quizzobackend.quiz.service;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.example.quizzobackend.attempt.dto.QuestionResultDto;
+import org.example.quizzobackend.quiz.dto.QuizResultDto;
+import org.example.quizzobackend.quiz.enitity.Answer;
+import org.example.quizzobackend.quiz.enitity.QuizAttempt;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;

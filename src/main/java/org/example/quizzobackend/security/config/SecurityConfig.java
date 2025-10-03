@@ -1,5 +1,6 @@
 package org.example.quizzobackend.security.config;
 
+import org.example.quizzobackend.security.jwt.JwtAuthenticationEntryPoint;
 import org.example.quizzobackend.security.jwt.JwtAuthenticationFilter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
