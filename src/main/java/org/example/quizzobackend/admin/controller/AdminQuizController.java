@@ -2,6 +2,7 @@ package org.example.quizzobackend.admin.controller;
 
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import org.example.quizzobackend.admin.service.QuestionManagementService;
 import org.example.quizzobackend.admin.service.QuizManagementService;
 import org.example.quizzobackend.admin.dto.QuestionCreateDto;
 import org.example.quizzobackend.admin.dto.QuizCreateDto;

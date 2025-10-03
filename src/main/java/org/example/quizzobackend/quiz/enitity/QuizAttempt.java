@@ -8,7 +8,13 @@ import java.time.LocalDateTime;
 import java.util.*;
 
 @Entity
-@Table(name = "quiz_attempts")
+
+@Table(name = "quiz_attempts",
+        uniqueConstraints = @UniqueConstraint(
+                columnNames = {"user_id", "quiz_id", "status"},
+                name = "uk_user_quiz_active"
+        )
+)
 @Getter
 @Setter
 @Builder
@@ -55,12 +61,7 @@ public class QuizAttempt extends BaseEntity {
     private Set<Answer> answers = new HashSet<>();
 
     // Unique constraint to prevent multiple active attempts
-    @Table(
-            uniqueConstraints = @UniqueConstraint(
-                    columnNames = {"user_id", "quiz_id", "status"},
-                    name = "uk_user_quiz_active"
-            )
-    )
+
 
     // Helper methods
     public void addAnswer(Answer answer) {
